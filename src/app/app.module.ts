@@ -2,13 +2,26 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { ContactsModule } from './contacts/contacts.module';
+import { Routes, RouterModule } from '@angular/router';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { HttpClientModule } from '@angular/common/http';
+
+const routes: Routes = [
+  { path: '', redirectTo: 'contacts', pathMatch: 'full'},
+  { path:'contacts', loadChildren: 'src/app/contacts/contacts.module#ContactsModule'},
+  { path: '**', component: NotFoundComponent }
+]
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NotFoundComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(routes),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
