@@ -10,7 +10,7 @@ import { ContactsService } from '../contacts.service';
 })
 export class ListComponent implements OnInit {
   dataSource$: Observable<Contacts>
-  displayedColumns = ['name', 'surname']
+  displayedColumns = ['id', 'name', 'surname', 'age', 'phone', 'email']
   
   constructor(private contactsService: ContactsService) { }
 

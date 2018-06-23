@@ -7,7 +7,7 @@ import { Contacts } from './models/Contact';
   providedIn: 'root'
 })
 export class ContactsService {
-  baseUrl: 'http://5b2a862d3a8ea3001418d7bb.mockapi.io/contacts'
+  baseUrl = 'http://5b2a862d3a8ea3001418d7bb.mockapi.io/contacts'
   constructor(private http: HttpClient) { }
 
   list(): Observable<Contacts>{
