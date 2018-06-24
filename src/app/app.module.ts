@@ -9,7 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
   { path: '', redirectTo: 'contacts', pathMatch: 'full'},
-  { path:'contacts', loadChildren: 'src/app/contacts/contacts.module#ContactsModule'},
+  { path: 'contacts', loadChildren: 'src/app/contacts/contacts.module#ContactsModule'},
   { path: '**', component: NotFoundComponent }
 ]
 
